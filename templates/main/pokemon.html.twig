@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <main>
+
+
+            <nav>
+                <button>Trier par A>Z</button>
+            </nav>
+
+        {% for pokemon in pokedex %}
+            <div class="cardPokemon">
+                <h4>{{ pokemon.nom }}</h4>
+                <img src="{{ (pokemon.estCapture) ? asset('img/icon/pokeball-ok.jpg') : asset('img/icon/pokeball-ko.jpg') }}" alt="">
+                <h5>N°{{ pokemon.id }}</h5>
+                <img src="{{ asset('img/pokemon/'~pokemon.image) }}" alt="image du pokémon : {{ pokemon.nom }}">
+                <p>Description : {{ pokemon.description }}</p>
+                <p>ATK : {{ pokemon.attaque }} / DEF : {{ pokemon.defense }}</p>
+                <p>{{ (pokemon.estCapture)? 'Pokémon Capturé' : 'Pokémon non Capturé' }}</p>
+            </div>
+            <br>
+        {% endfor %}
+
+
+
+
+
+
+
+
+    </main>
+
+{% endblock %}
+
+{% block title %}
+{{ parent() }} - Pokédex
+{% endblock %}
+
+

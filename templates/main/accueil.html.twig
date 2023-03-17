@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}{{ parent()}} - Accueil{% endblock %}
+
+
+
+{% block body %}
+
+<div class="pokeAccueil">
+
+    <a href="{{ path('main_pokemon') }}">
+        <div class="centerPoke">
+            <img src="{{ asset('img/pokemon/pokemon_logo.svg.png')}}" alt="Logo Pokémon" class="logoPoke">
+        <h3 class="Attrap">Attrapez les tous !</h3>
+        </div>
+    </a>
+
+</div>
+
+
+
+
+
+
+{% endblock %}

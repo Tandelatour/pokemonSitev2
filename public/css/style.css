@@ -1,0 +1,40 @@
+body {
+    background: linear-gradient(to bottom, #4169E1, #1E90FF);
+    margin: 0;
+    padding: 0;
+    /* si vous utilisez Flexbox, vous pouvez ajouter ces propriétés pour centrer verticalement et horizontalement le contenu */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pokeAccueil{
+
+    justify-content: center;
+    display: flex;
+    align-content: center;
+
+}
+.logoPoke{
+    width: 50em;
+}
+
+.Attrap{
+    display: flex;
+    justify-content: center;
+    font-size: 3em;
+    color: #daeb09;
+    text-shadow: 4px 4px 6px blue;
+}
+
+
+main{
+    background-color: whitesmoke;
+    width: 80%;
+
+}
+
+.cardPokemon{
+    background-color: #B0413E;
+    margin: 10rem;
+}
