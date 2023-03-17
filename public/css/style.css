@@ -1,4 +1,71 @@
-/*
+.cardPokemon {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    /* Set the size of the card container */
+    width: 200px;
+    border-radius: 1.2em;
+    border: 6px solid #B0413E ;
+    padding: 1em;
+    margin: 1em;
+    background-color: #B0413E;
+
+
+}
+
+.pokeDetail{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    /* Set the size of the card container */
+    width: 30em;
+    border-radius: 1.2em;
+    border: 6px solid #B0413E ;
+    padding: 1em;
+    margin: 1em;
+    background-color: #B0413E;
+    justify-content: center;
+    margin-left: 20em;
+    margin-right: 20em;
+
+}
+
+*{
+    font-family: 'Rajdhani', sans-serif;
+}
+.imgPokemon {
+    /* Set the size of the image */
+    max-width: 100%;
+    height: auto;
+}
+
+/* Add some padding inside the card container */
+.container {
+    padding: 2px 16px;
+    background-color: whitesmoke;
+    padding: 0.2em 1.3em 1.3em 1.3em;
+    border-radius: 1.3rem;
+    text-decoration: none;
+    font-size: 2em;
+    font-family: 'Rajdhani', sans-serif;
+
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.pokedexStyle {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.9em;
+}
+
+.imgcatch{
+    height: auto;
+    max-width: 20%;
+    display: grid;
+    }
+
 html {
     background: linear-gradient(to bottom, #4169E1, #1E90FF);
     margin: 0;
@@ -26,7 +93,16 @@ html {
     text-shadow: 4px 4px 6px blue;
 }
 
+header{
+    justify-content: center;
+    display: flex;
+    background-color: #B0413E;
+    padding: 1.5em 4em 1.5em 4em;
+    margin-bottom: 2em;
 
+
+}
+/*
 main{
     background-color: whitesmoke;
     width: 80%;
