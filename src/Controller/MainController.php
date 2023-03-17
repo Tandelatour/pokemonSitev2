@@ -4,6 +4,7 @@ namespace App\Controller;
 
 use App\Entity\Pokemon;
 use App\Repository\PokemonRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -18,10 +19,9 @@ class MainController extends AbstractController
         ]);
     }
 
-    #[Route('/pokemon', name: 'main_pokedex')]
+    #[Route('/pokedex', name: 'main_pokedex')]
     public function pokedex(PokemonRepository $pokemonRepository): Response
     {
-
         $pokedex = $pokemonRepository->findAll();
         dump($pokedex);
 
@@ -30,8 +30,6 @@ class MainController extends AbstractController
 
         ]);
     }
-
-
 
 
     #[Route('/pokemon/{id}', name: 'main_pokemon')]
@@ -48,9 +46,20 @@ class MainController extends AbstractController
     }
 
 
+    //redirect
+
+    #[Route('/pokemon/capture/{id}', name: 'main_capture')]
+    public function capturer(int $id, PokemonRepository $pokemonRepository): Response
+    {
+        $entityManager = $this->getDoctrine()->getManager();
+        $pokemon = $pokemonRepository->find($id);
+        $pokemon->setEstCapture(!$pokemon->isEstCapture());
+        $entityManager->persist($pokemon);
+        $entityManager->flush();
 
 
+        return $this->redirectToRoute('main_pokedex', [
 
-
-
+        ]);
+    }
 }
