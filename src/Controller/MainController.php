@@ -31,6 +31,9 @@ class MainController extends AbstractController
         ]);
     }
 
+
+
+
     #[Route('/pokemon/{id}', name: 'main_pokemon')]
     public function pokemon(int $id, PokemonRepository $pokemonRepository): Response
     {

@@ -1,7 +1,8 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
+{% include 'include/header.html.twig' %}
+    <main>
     <div class="pokeDetail">
 
         <h4>{{ pokemon.nom }}</h4>
@@ -20,6 +21,8 @@
 
     </div>
     <br>
+
+    </main>
 {% endblock %}
 
 {% block title %}
