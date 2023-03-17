@@ -18,19 +18,36 @@ class MainController extends AbstractController
         ]);
     }
 
-    #[Route('/pokemon', name: 'main_pokemon')]
-    public function pokemon(PokemonRepository $pokemonRepository): Response
+    #[Route('/pokemon', name: 'main_pokedex')]
+    public function pokedex(PokemonRepository $pokemonRepository): Response
     {
 
         $pokedex = $pokemonRepository->findAll();
         dump($pokedex);
 
-
-
-        return $this->render('main/pokemon.html.twig', [
+        return $this->render('main/pokedex.html.twig', [
             'pokedex' => $pokedex
 
         ]);
     }
+
+    #[Route('/pokemon/{id}', name: 'main_pokemon')]
+    public function pokemon(int $id, PokemonRepository $pokemonRepository): Response
+    {
+
+        $pokemon = $pokemonRepository->find($id);
+
+
+        return $this->render('main/pokemon.html.twig', [
+            'pokemon' => $pokemon
+
+        ]);
+    }
+
+
+
+
+
+
 
 }

@@ -1,11 +1,10 @@
-body {
+/*
+html {
     background: linear-gradient(to bottom, #4169E1, #1E90FF);
     margin: 0;
     padding: 0;
-    /* si vous utilisez Flexbox, vous pouvez ajouter ces propriétés pour centrer verticalement et horizontalement le contenu */
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+
 }
 
 .pokeAccueil{
@@ -31,10 +30,40 @@ body {
 main{
     background-color: whitesmoke;
     width: 80%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
 
 }
 
 .cardPokemon{
-    background-color: #B0413E;
-    margin: 10rem;
+
+    margin: 5rem;
+    padding: 2rem;
+    border-radius: 1.2em;
+    border: 2em solid #B0413E ;
+    display: grid;
+    grid-template-columns: 20% 20% 20% 20% 20%;
+    grid-template-rows: 20% 20% 20% 20% 20%;
+
 }
+header{
+
+    background-color: darkred;
+
+}
+
+.imgPokemon{
+    width: 15em;
+}
+
+.imgcatch{
+    width: 5em;
+}
+
+
+.descripStyle{
+    font-size: 0.9rem;
+}
+
+*/
