@@ -8,9 +8,14 @@
 
         <nav>
 
-            <button>Trier par A>Z</button>
-            <button>Trier par Z>A</button>
 
+
+
+            <a href="{{ path('main_tri_alpha',{'typeTrie':'asc'}) }}"><button>Trier par A>Z</button></a>
+            <a href="{{ path('main_tri_alpha',{'typeTrie':'desc'}) }}"><button>Trier par Z>A</button></a>
+            <a href="{{ path('main_tri_capt',{'tri':1}) }}"><button>Trier par Pokémon capturé</button></a>
+            <a href="{{ path('main_tri_capt',{'tri':0}) }}"><button>Trier par Pokémon non capturé</button></a>
+            <a href="{{ path('main_pokedex')}}"><button>Trier par Id</button></a>
 
         </nav>
 
@@ -25,7 +30,7 @@
                         <a href="{{ path('main_pokemon',{'id':pokemon.id()}) }}">
                             <b> {{ pokemon.nom }}</b>
                         </a>
-                        <a href="{{ path('main_capture/{id}',{'id':pokemon.id()}) }}">
+                        <a href="{{ path('main_capture',{'id':pokemon.id()}) }}">
                         <img class="imgcatch" src="{{ (pokemon.estCapture) ? asset('img/icon/pokeball-ok.jpg') : asset('img/icon/pokeball-ko.jpg') }}" alt="">
                         </a>   </div>
                 </div>
