@@ -3,9 +3,11 @@
 namespace App\Controller;
 
 use App\Entity\Pokemon;
+use App\Form\PokemonType;
 use App\Repository\PokemonRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
@@ -87,6 +89,24 @@ class MainController extends AbstractController
             "pokedex"=>$pokedex
         ]);
     }
+
+//#[Route('/pokemon/ajouter', name: 'main_ajouterPokemon')]
+//    public function ajouterPokemon(Request $request, EntityManagerInterface $entityManager):Response{
+//        $pokemon = new Pokemon();
+//        $pokemonForm = $this->createForm(PokemonType::class,$pokemon);
+//        $pokemonForm->handleRequest($request);
+//
+//        if ($pokemonForm->isSubmitted()){
+//            $entityManager->persist($pokemon);
+//            $entityManager->flush();
+//
+//            return $this->redirectToRoute('/');
+//        }
+//
+//        return $this->render('main/ajouter.html.twig',[
+//            '$pokemonForm'=>$pokemonForm
+//        ]);
+//    }
 
 
 

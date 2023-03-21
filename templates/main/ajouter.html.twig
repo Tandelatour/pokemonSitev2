@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ form_start(pokemonForm) }}
+
+    {{ form_widget(pokemonForm) }}
+
+    <button>Ajouter</button>
+
+    {{ form_end(pokemonForm) }}
+
+{% endblock %}
+
+{% block title %}
+    {{ parent() }} - Ajouter
+{% endblock %}
+

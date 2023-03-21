@@ -17,9 +17,15 @@
             <a href="{{ path('main_tri_capt',{'tri':0}) }}"><button>Trier par Pokémon non capturé</button></a>
             <a href="{{ path('main_pokedex')}}"><button>Trier par Id</button></a>
 
+            <br>
+
+       {#    <a href="{{ path('main_ajouterPokemon') }}"><button>Ajouter Pokemon</button></a>     #}
         </nav>
 
         <div class="pokedexStyle">
+
+
+
 
 
             {% for pokemon in pokedex %}
@@ -30,9 +36,14 @@
                         <a href="{{ path('main_pokemon',{'id':pokemon.id()}) }}">
                             <b> {{ pokemon.nom }}</b>
                         </a>
-                        <a href="{{ path('main_capture',{'id':pokemon.id()}) }}">
-                        <img class="imgcatch" src="{{ (pokemon.estCapture) ? asset('img/icon/pokeball-ok.jpg') : asset('img/icon/pokeball-ko.jpg') }}" alt="">
-                        </a>   </div>
+
+                            <div id="catchjs" onclick="messageCatch()">
+                            <a href="{{ path('main_capture',{'id':pokemon.id()}) }}">
+                                <img class="imgcatch" id="imgcatch" src="{{ (pokemon.estCapture) ? asset('img/icon/pokeball-ok.jpg') : asset('img/icon/pokeball-ko.jpg') }}" alt="">
+                            </a>
+                            </div>
+
+                         </div>
                 </div>
 
 
